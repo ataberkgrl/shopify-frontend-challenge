@@ -12,15 +12,16 @@ function App() {
                                                     ? JSON.parse(localStorage.getItem("nominateds")) : [])
 
     const handleSearch = (search) => {
-        fetch(`http://www.omdbapi.com/?s=${search}&apikey=${apikey}`)
+        fetch(`http://www.omdbapi.com/?s=${search}&apikey=${apikey}&type=movie`)
         .then(response => response.json())
         .then(data => {setResults(data.Search)})
     }
 
     const handleNominate = (movie) => {
-        if (!nominateds.includes(movie) & nominateds.length < 5)
-        setNominateds([...nominateds, movie])
-        localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
+        if (!nominateds.includes(movie) & nominateds.length < 5) {
+            setNominateds([...nominateds, movie])
+            localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
+        }
     }
 
     const handleRemove = (movie) => {
@@ -33,7 +34,7 @@ function App() {
 
     return (
         <div className="App">
-            {nominateds.length ? <Nominateds nominateds={nominateds} handleRemove={handleRemove}></Nominateds> : <Welcome></Welcome>}
+            {nominateds.length ? <Nominateds nominateds={nominateds} handleRemove={handleRemove}></Nominateds> : <Welcome/>}
             <SearchBar apikey={apikey} onChange={handleSearch}></SearchBar>
             <Results results={results} handleNominate={handleNominate}></Results>
         </div>

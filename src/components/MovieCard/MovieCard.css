@@ -1,7 +1,27 @@
-img {
+.card-img-top {
     height: 230px;
     width: auto;
     object-fit: cover;
+}
+
+.card-hover-icon {
+    height: auto;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 70px;
+    visibility: hidden;
+}
+
+.card:hover .card-img-top {
+    filter: brightness(30%);
+    z-index: 0;
+}
+
+.card:hover .card-hover-icon {
+    visibility: visible;
+    z-index: 1;
 }
 
 button {

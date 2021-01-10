@@ -6,8 +6,9 @@ function MovieCard(props) {
     const [loaded, setLoaded] = useState(false)
 
     return (
-        <div className="card">
+        <div className="card result">
             <button onClick={() => props.handleButton(props.movie)}>
+                <img className="card-hover-icon" src={!props.nominated ? "/nominate.png" : "/unnominate.png"} alt="nominate icon"></img>
                 {!loaded && <ImageLoader/>}
                 <img 
                     className="card-img-top" 
@@ -15,7 +16,7 @@ function MovieCard(props) {
                     alt={`Poster of ${props.movie.Title}`} 
                     onLoad={() => setLoaded(true)}>
                 </img>
-                <div class="card-body">
+                <div className="card-body">
                     <h3 className="card-title">{props.movie.Title}</h3>
                     <p className="card-text">{props.movie.Year}</p>
                 </div>

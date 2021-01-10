@@ -5,8 +5,8 @@ import "./Nominateds.css"
 function Nominateds(props) {
     return (
         <div className="card-deck" id="nominateds">
-            {props.nominateds ? props.nominateds.map(movie => 
-                <MovieCard movie={movie} handleButton={props.handleRemove} nominated={true}></MovieCard>
+            {props.nominateds ? props.nominateds.map((movie, index) => 
+                <MovieCard key={index} movie={movie} handleButton={props.handleRemove} nominated={true}></MovieCard>
             ) : null}
         </div>
     )

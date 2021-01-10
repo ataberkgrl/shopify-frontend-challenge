@@ -5,7 +5,7 @@ function Welcome() {
 
     return (
         <div id="welcome">
-            <img src="/shopify.png" alt="shopify logo"></img>
+            <img id="shopify-logo" src="/shopify.png" alt="shopify logo"></img>
             <h1>Nominate your favourite movies!</h1>
         </div>
     )

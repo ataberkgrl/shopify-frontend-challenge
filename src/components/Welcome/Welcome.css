@@ -4,3 +4,8 @@
     grid-column: 2/3;
     grid-row: 1/2;
 }
+
+#shopify-logo {
+    width: 400px;
+    height: auto;
+}
