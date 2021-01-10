@@ -36,7 +36,7 @@ function App() {
         <div className="App">
             {nominateds.length ? <Nominateds nominateds={nominateds} handleRemove={handleRemove}></Nominateds> : <Welcome/>}
             <SearchBar apikey={apikey} onChange={handleSearch}></SearchBar>
-            <Results results={results} handleNominate={handleNominate}></Results>
+            {(results !== undefined && results.length) ? <Results results={results} handleNominate={handleNominate}></Results> : null}
         </div>
     );
 }

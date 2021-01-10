@@ -1,11 +1,17 @@
 #welcome {
+    width: fit-content;
     text-align: center;
     margin-top: 30px;
     grid-column: 2/3;
     grid-row: 1/2;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #shopify-logo {
-    width: 400px;
+    width: 300px;
     height: auto;
 }

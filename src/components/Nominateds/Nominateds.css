@@ -1,5 +1,7 @@
 #nominateds {
-    grid-column: 2/3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    grid-column: 1/4;
     grid-row: 1/2;
     align-self: center;
 }

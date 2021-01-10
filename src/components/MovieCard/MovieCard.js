@@ -7,7 +7,7 @@ function MovieCard(props) {
 
     return (
         <div className="card result">
-            <button onClick={() => props.handleButton(props.movie)}>
+            <button className="card-button" onClick={() => props.handleButton(props.movie)}>
                 <img className="card-hover-icon" src={!props.nominated ? "/nominate.png" : "/unnominate.png"} alt="nominate icon"></img>
                 {!loaded && <ImageLoader/>}
                 <img 

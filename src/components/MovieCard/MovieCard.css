@@ -1,7 +1,11 @@
 .card-img-top {
-    height: 230px;
-    width: auto;
+    height: 70%;
+    width: 100%;
     object-fit: cover;
+}
+
+.card-body {
+    height: 30%;
 }
 
 .card-hover-icon {
@@ -24,37 +28,35 @@
     z-index: 1;
 }
 
-button {
+.card-button {
+    height: 100%;
 	background: none;
 	color: inherit;
 	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+	outline: none;
+}
+
+.card-button:focus {
+    outline: none;
 }
 
 .card-title {
-    font-size: 16px;
+    font-size: 90%;
 }
 
 .card-text {
-    font-size: 12px;
+    font-size: 90%;
 }
 
 .card {
     word-wrap: normal;
     border: none;
-    width: 9vw;
-    flex: 0 0 auto;
+    width: 200px;
+    height: 100%;
+    flex: 0 0 auto !important;
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: 30px;
-}
-
-.card-deck {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    overflow: auto;
 }
