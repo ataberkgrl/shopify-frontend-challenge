@@ -1,7 +1,7 @@
-import SearchBar from './components/SearchBar.js';
-import Results from './components/Results.js';
-import React, { useEffect, useState } from 'react';
-import Nominateds from './components/Nominateds.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import Results from './components/Results/Results.js';
+import React, { useState } from 'react';
+import Nominateds from './components/Nominateds/Nominateds.js';
 
 function App() {
     const apikey = "109a2cb4"
@@ -28,9 +28,9 @@ function App() {
 
     return (
         <div className="App">
+            <Nominateds nominateds={nominateds} handleRemove={handleRemove}></Nominateds>
             <SearchBar apikey={apikey} onChange={handleSearch}></SearchBar>
             <Results results={results} handleNominate={handleNominate}></Results>
-            <Nominateds nominateds={nominateds} handleRemove={handleRemove}></Nominateds>
         </div>
     );
 }
