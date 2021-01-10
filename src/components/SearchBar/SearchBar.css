@@ -1,5 +1,8 @@
 #search {
-    text-align: center;
+    justify-self: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: center;
 }
 
 input {
@@ -8,4 +11,12 @@ input {
     text-align: center;
     font-size: 30px;
     margin-top: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(117, 117, 117);
+}
+
+input:focus {
+    outline: none;
 }
