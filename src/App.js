@@ -23,15 +23,17 @@ function App() {
             setNominateds([...nominateds, movie])
             localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
         }
-        else if (nominationCheck(movie))
+        else
         {
-            const copyNominateds = [...nominateds]
-            copyNominateds.forEach((nominated, index) => {
+            nominateds.forEach((nominated, index) => {
                 if (JSON.stringify(movie) === JSON.stringify(nominated))
+                {
+                    const copyNominateds = [...nominateds]
                     copyNominateds.splice(index, 1)
+                    setNominateds(copyNominateds)
+                    localStorage.setItem("nominateds", JSON.stringify(copyNominateds))
+                }
             })
-            setNominateds(copyNominateds)
-            localStorage.setItem("nominateds", JSON.stringify(copyNominateds))
         }
     }
 

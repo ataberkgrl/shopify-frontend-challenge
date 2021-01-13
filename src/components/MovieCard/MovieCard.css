@@ -14,7 +14,7 @@
     position: absolute;
     left: 20%;
     right: 20%;
-    top: 70px;
+    top: 20%;
     visibility: hidden;
 }
 
@@ -29,7 +29,7 @@
     position: absolute;
     left: 20%;
     right: 20%;
-    top: 70px;
+    top: 20%;
 }
 
 .card:hover .card-hover-icon {
@@ -68,4 +68,5 @@
     flex: 0 0 auto !important;
     margin-left: 5px;
     margin-right: 5px;
+    padding-bottom: 3vh;
 }
