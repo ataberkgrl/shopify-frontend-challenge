@@ -12,7 +12,7 @@ function App() {
                                                     ? JSON.parse(localStorage.getItem("nominateds")) : [])
 
     const handleSearch = (search) => {
-        fetch(`http://www.omdbapi.com/?s=${search}&apikey=${apikey}&type=movie`)
+        fetch(`https://www.omdbapi.com/?s=${search}&apikey=${apikey}&type=movie`)
         .then(response => response.json())
         .then(data => {setResults(data.Search)})
     }
