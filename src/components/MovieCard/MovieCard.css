@@ -23,6 +23,15 @@
     z-index: 0;
 }
 
+.nominated-icon {
+    height: auto;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 70px;
+}
+
 .card:hover .card-hover-icon {
     visibility: visible;
     z-index: 1;
