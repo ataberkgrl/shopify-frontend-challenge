@@ -18,32 +18,36 @@ function App() {
     }
 
     const handleMovieClick = (movie) => {
-        if (!movieNominated(movie) & nominateds.length < 5)
+        if (!nominationCheck(movie) & nominateds.length < 5)
         {
             setNominateds([...nominateds, movie])
             localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
         }
-        else
+        else if (nominationCheck(movie))
         {
             const copyNominateds = [...nominateds]
-            const index = nominateds.indexOf(movie)
-            copyNominateds.splice(index, 1)
+            copyNominateds.forEach((nominated, index) => {
+                if (JSON.stringify(movie) === JSON.stringify(nominated))
+                    copyNominateds.splice(index, 1)
+            })
             setNominateds(copyNominateds)
             localStorage.setItem("nominateds", JSON.stringify(copyNominateds))
         }
     }
 
-    const movieNominated = (movie) => {
-        if (nominateds.includes(movie))
-            return true
-        return false
+    const nominationCheck = (movie) => {
+        return nominateds.some(nominated => {
+            return JSON.stringify(movie) === JSON.stringify(nominated)
+        })
     }
 
     return (
         <div className="App">
-            {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}></Nominateds> : <Welcome/>}
-            <SearchBar apikey={apikey} onChange={handleSearch}></SearchBar>
-            {(results !== undefined && results.length) ? <Results results={results} nominateds={nominateds} handleMovieClick={handleMovieClick}></Results> : null}
+            {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/> : <Welcome/>}
+            <SearchBar apikey={apikey} onChange={handleSearch}/>
+            {(results !== undefined && results.length) ? 
+            <Results results={results} nominationCheck={nominationCheck} handleMovieClick={handleMovieClick}/>
+            : null}
         </div>
     );
 }

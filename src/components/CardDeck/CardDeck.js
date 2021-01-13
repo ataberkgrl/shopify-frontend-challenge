@@ -3,7 +3,7 @@ import MovieCard from "../MovieCard/MovieCard.js"
 import "./CardDeck.css"
 
 function CardDeck(props) {
-    
+
     const moviesRef = useRef(null)
     const scrollDeck = (direction) => {
         if (direction === "R")
@@ -19,12 +19,6 @@ function CardDeck(props) {
         return (window.innerWidth - 90) - ((window.innerWidth - 90) % 140)
     }
 
-    const nominationCheck = (movie) => {
-        return props.nominateds.some(nominated => {
-            return JSON.stringify(movie) === JSON.stringify(nominated)
-        })
-    }
-
     return (
         <div className="card-deck">
             <button className="scroll-button" onClick={() => scrollDeck("L")}>
@@ -32,7 +26,7 @@ function CardDeck(props) {
             </button>
             <div class="movies" ref={moviesRef}>
                 {props.movies ? props.movies.map((movie, index) =>
-                    <MovieCard key={index} movie={movie} handleClick={props.handleMovieClick} nominated={nominationCheck(movie)}></MovieCard>
+                    <MovieCard key={index} movie={movie} handleClick={props.handleMovieClick} nominated={props.nominatedDeck || props.nominationCheck(movie)}></MovieCard>
                 ) : null}
             </div>
             <button className="scroll-button" onClick={() => scrollDeck("R")}>
