@@ -1,8 +1,8 @@
 #results {
     height: 100%;
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    margin-bottom: 30px;
     grid-column: 1/4;
     grid-row: 3/4;
     align-self: center;
@@ -11,19 +11,13 @@
     justify-content: space-evenly;
 }
 
-.card-deck {
-    height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-
 .scroll-left, .scroll-right {
     width: 45px;
     height: auto;
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
+    bottom: 50px;
 }
 
 .scroll-button {

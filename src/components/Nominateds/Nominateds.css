@@ -3,5 +3,7 @@
     padding-bottom: 30px;
     grid-column: 1/4;
     grid-row: 1/2;
-    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

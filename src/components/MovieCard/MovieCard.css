@@ -44,17 +44,17 @@
 }
 
 .card-title {
-    font-size: 90%;
+    font-size: calc(60% + 0.2vw);
 }
 
 .card-text {
-    font-size: 90%;
+    font-size: calc(60% + 0.2vw);
 }
 
 .card {
     word-wrap: normal;
     border: none;
-    width: 200px;
+    width: 130px;
     height: 100%;
     flex: 0 0 auto !important;
     margin-left: 5px;
