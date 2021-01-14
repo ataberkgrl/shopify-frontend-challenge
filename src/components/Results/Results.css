@@ -1,9 +1,9 @@
 #results {
     height: 100%;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 3vh;
     grid-column: 1/4;
-    grid-row: 4/5;
+    grid-row: 3/4;
     align-self: center;
     display: flex;
     flex-direction: row;

@@ -1,13 +1,13 @@
 #search {
     justify-self: center;
     grid-column: 2/3;
-    grid-row: 3/4;
+    grid-row: 2/3;
     align-self: center;
 }
 
 input {
     text-align: center;
-    font-size: calc(20px + 1vw);
+    font-size: calc(8px + 1.8vh);
     border-top: none;
     border-left: none;
     border-right: none;

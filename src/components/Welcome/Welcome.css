@@ -3,7 +3,7 @@
     height: 100%;
     text-align: center;
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 1/2;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -17,5 +17,5 @@
 }
 
 #welcome > h1 {
-    font-size: calc(20px + 1vw);
+    font-size: calc(10px + 1.8vh);
 }

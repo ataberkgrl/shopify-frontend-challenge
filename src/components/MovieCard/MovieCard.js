@@ -12,7 +12,7 @@ function MovieCard(props) {
                 <img className="card-hover-icon" src={!props.nominated ? "/nominate.png" : "/unnominate.png"} alt="nominate icon"></img>
                 {!loaded && <ImageLoader/>}
                 <img 
-                    className="card-img-top" 
+                    className="card-img"
                     src={props.movie.Poster !== "N/A" ? props.movie.Poster : "/no-image.png"} 
                     alt={`Poster of ${props.movie.Title}`} 
                     onLoad={() => setLoaded(true)}>
