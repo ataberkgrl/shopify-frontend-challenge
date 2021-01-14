@@ -4,7 +4,7 @@ import "./CardDeck.css"
 
 function CardDeck(props) {
 
-    const cardWidth = ((50 + 10/100 * window.innerWidth) + 10)
+    const cardWidth = ((50 + 10/100 * window.innerHeight) + 10)
     const moviesRef = useRef(null)
 
     const scrollDeck = (direction) => {
