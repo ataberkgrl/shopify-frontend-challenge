@@ -1,5 +1,7 @@
 #nominateds {
-    margin-top: 2vh;
+    height: 100%;
+    width: 100%;
+    padding-top: 3vh;
     grid-column: 1/4;
     grid-row: 1/2;
     display: flex;

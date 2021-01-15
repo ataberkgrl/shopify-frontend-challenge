@@ -6,7 +6,7 @@ function MovieCard(props) {
     const [loaded, setLoaded] = useState(false)
 
     return (
-        <div className="card">
+        <div className={`card ${props.nominated ? "nominated" : ""}`}>
             <button className="card-button" onClick={() => props.handleClick(props.movie)}>
                 {props.nominated ? <img className="nominated-icon" src="/nominate.png" alt="nominate icon"></img> : null}
                 <img className="card-hover-icon" src={!props.nominated ? "/nominate.png" : "/unnominate.png"} alt="nominate icon"></img>

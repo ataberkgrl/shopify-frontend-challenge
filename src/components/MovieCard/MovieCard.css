@@ -18,16 +18,28 @@
     visibility: hidden;
 }
 
+#results .nominated .card-img {
+    filter: brightness(30%);
+}
+
 @media (pointer:fine) {
     .card:hover .card-img {
         filter: brightness(30%);
         z-index: 0;
     }
 
+    .card:hover .nominated-icon {
+        visibility: hidden;
+    }
+
     .card:hover .card-hover-icon {
         visibility: visible;
         z-index: 1;
     }
+}
+
+#nominateds .nominated-icon {
+    visibility: hidden;
 }
 
 .nominated-icon {
@@ -37,6 +49,7 @@
     left: 20%;
     right: 20%;
     top: 20%;
+    z-index: 1;
 }
 
 .card-button {
@@ -65,8 +78,10 @@
 .card {
     word-wrap: normal;
     border: none;
-    width: calc(50px + 10vh);
-    height: 100%;
+    width: calc(180px - 5vh);
+    min-width: 15vh;
+    max-width: 20vh;
+    height: 35vh;
     flex: 0 0 auto !important;
     margin-left: 5px;
     margin-right: 5px;
