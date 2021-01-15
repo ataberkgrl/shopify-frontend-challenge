@@ -1,7 +1,13 @@
-.card-img {
-    object-fit: cover;
+.img-container {
     height: 70%;
     width: 100%;
+    text-align: center;
+}
+
+.card-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; 
 }
 
 .card-body {
@@ -12,9 +18,8 @@
     height: auto;
     width: 60%;
     position: absolute;
-    left: 20%;
-    right: 20%;
     top: 20%;
+    left: 20%;
     visibility: hidden;
 }
 
@@ -46,9 +51,8 @@
     height: auto;
     width: 60%;
     position: absolute;
-    left: 20%;
-    right: 20%;
     top: 20%;
+    left: 20%;
     z-index: 1;
 }
 
