@@ -46,12 +46,16 @@ function App() {
 
     return (
         <div className="App">
-            {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/> : <Welcome/>}
+            {nominateds.length ?
+                <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/>
+                : <Welcome/>
+            }
             <SearchBar apikey={apikey} onChange={handleSearch}/>
-            {nominateds.length === 5 ? <NominationDone></NominationDone> : 
-                (results !== undefined && results.length) ? 
+            {nominateds.length === 5 ? 
+                <NominationDone></NominationDone> 
+                : ((results !== undefined && results.length) ? 
                     <Results results={results} nominationCheck={nominationCheck} handleMovieClick={handleMovieClick}/>
-                : null
+                    : null)
             }
         </div>
     );

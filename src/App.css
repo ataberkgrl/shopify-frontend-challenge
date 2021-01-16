@@ -6,4 +6,5 @@
     grid-template-rows: 45% 5% 45%;
     justify-items: center;
     align-items: center;
+    overflow: hidden;
 }

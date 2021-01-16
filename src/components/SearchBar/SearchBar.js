@@ -15,7 +15,7 @@ function SearchBar(props) {
                 }
             }
             value={search}
-            placeholder="Search movies you loved"></input>
+            placeholder="What is your favourite movie?"></input>
         </div>
     )
 }

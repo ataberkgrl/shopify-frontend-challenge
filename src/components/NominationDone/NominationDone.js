@@ -8,7 +8,7 @@ function NominationDone(props) {
                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
                 <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
             </svg>
-            <h3>You have nominated your 5 favourite movie!</h3>
+            <h3>You have nominated your 5 favourite movies!</h3>
             <h6>To add a new nomination you must remove one of them.</h6>
         </div>
     )

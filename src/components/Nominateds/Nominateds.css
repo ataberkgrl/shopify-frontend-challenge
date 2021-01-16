@@ -6,9 +6,11 @@
     grid-row: 1/2;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 #nominations-text {
+    text-align: center;
     font-size: 3vh;
 }

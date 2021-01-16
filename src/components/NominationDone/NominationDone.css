@@ -2,6 +2,8 @@
     grid-column: 1/4;
     grid-row: 3/4;
     text-align: center;
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
 #nomination-done h3 {
