@@ -2,7 +2,7 @@
 
 This project was build for shopify internship application.
 You can visit deployed application from [here](https://shopify-frontend-challenge-ataberk.netlify.app/)
-You can view details of this project from [here](./UX & Web Developer Intern Challenge Summer 2021.pdf)
+You can view details of this project from [here](UX & Web Developer Intern Challenge Summer 2021.pdf)
 
 ## Available Scripts
 
