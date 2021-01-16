@@ -8,3 +8,7 @@
     flex-direction: column;
     align-items: center;
 }
+
+#nominations-text {
+    font-size: 3vh;
+}

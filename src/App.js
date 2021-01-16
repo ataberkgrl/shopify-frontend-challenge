@@ -1,6 +1,7 @@
 import SearchBar from './components/SearchBar/SearchBar.js';
 import Results from './components/Results/Results.js';
 import Welcome from './components/Welcome/Welcome.js';
+import NominationDone from './components/NominationDone/NominationDone.js'
 import "./App.css"
 import React, { useState } from 'react';
 import Nominateds from './components/Nominateds/Nominateds.js';
@@ -47,9 +48,11 @@ function App() {
         <div className="App">
             {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/> : <Welcome/>}
             <SearchBar apikey={apikey} onChange={handleSearch}/>
-            {(results !== undefined && results.length) ? 
-            <Results results={results} nominationCheck={nominationCheck} handleMovieClick={handleMovieClick}/>
-            : null}
+            {nominateds.length === 5 ? <NominationDone></NominationDone> : 
+                (results !== undefined && results.length) ? 
+                    <Results results={results} nominationCheck={nominationCheck} handleMovieClick={handleMovieClick}/>
+                : null
+            }
         </div>
     );
 }
