@@ -7,15 +7,24 @@ import React, { useState } from 'react';
 import Nominateds from './components/Nominateds/Nominateds.js';
 
 function App() {
+    const [search, setSearch] = useState("")
     const apikey = "109a2cb4"
     const [results, setResults] = useState([])
-    const [nominateds, setNominateds] = useState(localStorage.getItem("nominateds") !== null 
-                                                    ? JSON.parse(localStorage.getItem("nominateds")) : [])
+    const [nominateds, setNominateds] = useState(localStorage.getItem("nominateds") !== null ? JSON.parse(localStorage.getItem("nominateds")) : [])
 
-    const handleSearch = (search) => {
-        fetch(`https://www.omdbapi.com/?s=${search}&apikey=${apikey}&type=movie`)
+    const fetchMovies = (page=1, searchedMovie=search) => {
+        fetch(`https://www.omdbapi.com/?s=${searchedMovie}&apikey=${apikey}&type=movie&page=${page}`)
         .then(response => response.json())
-        .then(data => {setResults(data.Search)})
+        .then(data => {
+            if (page === 1) // if it is an initial search
+            {
+                setResults(data.Search)
+            }
+            else if (data.Search !== undefined) // if it is fetching next page
+            {
+                setResults((prevState) => prevState.concat(data.Search))
+            }
+        })
     }
 
     const handleMovieClick = (movie) => {
@@ -46,17 +55,14 @@ function App() {
 
     return (
         <div className="App">
-            {nominateds.length ?
-                <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/>
-                : <Welcome/>
-            }
-            <SearchBar apikey={apikey} onChange={handleSearch}/>
-            {nominateds.length === 5 ? 
-                <NominationDone></NominationDone> 
-                : ((results !== undefined && results.length) ? 
-                    <Results results={results} nominationCheck={nominationCheck} handleMovieClick={handleMovieClick}/>
-                    : null)
-            }
+            {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/> : <Welcome/>}
+            <SearchBar fetchMovies={fetchMovies} setSearch={setSearch}/>
+            {nominateds.length === 5 ? <NominationDone/> : (results !== undefined && results.length) ? <Results
+                                                                                                        fetchMovies={fetchMovies}
+                                                                                                        results={results}
+                                                                                                        nominationCheck={nominationCheck}
+                                                                                                        handleMovieClick={handleMovieClick}/>
+                                                                                                        : null}
         </div>
     );
 }

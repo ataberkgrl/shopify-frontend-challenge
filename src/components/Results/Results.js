@@ -6,7 +6,12 @@ function Results(props) {
 
     return (
         <div id="results">
-            <CardDeck movies={props.results} nominatedDeck={false} handleMovieClick={props.handleMovieClick} nominationCheck={props.nominationCheck}></CardDeck>
+            <CardDeck 
+            movies={props.results}
+            fetchMovies={props.fetchMovies}
+            nominatedDeck={false}
+            handleMovieClick={props.handleMovieClick}
+            nominationCheck={props.nominationCheck}></CardDeck>
         </div>
     )
 }

@@ -8,7 +8,7 @@ function MovieCard(props) {
     return (
         <div className={`card ${props.nominated ? "nominated" : ""}`}>
             <button className="card-button" onClick={() => props.handleClick(props.movie)}>
-                <div class="img-container">
+                <div className="img-container">
                     {props.nominated ? <img className="nominated-icon" src="/nominate.png" alt="nominate icon"></img> : null}
                     <img className="card-hover-icon" src={!props.nominated ? "/nominate.png" : "/unnominate.png"} alt="nominate icon"></img>
                     {!loaded && <ImageLoader/>}
@@ -16,8 +16,7 @@ function MovieCard(props) {
                         className="card-img"
                         src={props.movie.Poster !== "N/A" ? props.movie.Poster : "/no-image.png"} 
                         alt={`Poster of ${props.movie.Title}`} 
-                        onLoad={() => setLoaded(true)}>
-                            
+                        onLoad={() => setLoaded(true)}>  
                     </img>
                 </div>
                 <div className="card-body">
