@@ -7,6 +7,7 @@ function Results(props) {
     return (
         <div id="results">
             <CardDeck 
+            search={props.search}
             movies={props.results}
             fetchMovies={props.fetchMovies}
             nominatedDeck={false}

@@ -58,6 +58,7 @@ function App() {
             {nominateds.length ? <Nominateds nominateds={nominateds} handleMovieClick={handleMovieClick}/> : <Welcome/>}
             <SearchBar fetchMovies={fetchMovies} setSearch={setSearch}/>
             {nominateds.length === 5 ? <NominationDone/> : (results !== undefined && results.length) ? <Results
+                                                                                                        search={search}
                                                                                                         fetchMovies={fetchMovies}
                                                                                                         results={results}
                                                                                                         nominationCheck={nominationCheck}
