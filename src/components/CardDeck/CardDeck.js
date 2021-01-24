@@ -16,7 +16,6 @@ function CardDeck(props) {
             return null
         props.fetchMovies(currentPage + 1)
         setCurrentPage(currentPage + 1)
-        console.log(currentPage)
     }
 
     // couldn't make it work in bigger screen sizes 
