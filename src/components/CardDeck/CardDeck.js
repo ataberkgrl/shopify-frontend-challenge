@@ -12,10 +12,11 @@ function CardDeck(props) {
     }, [props.search])
 
     const scrollEndHandler = () => {
-        if (currentPage === 5) // don't fetch more than 5 pages
+        if (currentPage > 5) // don't fetch more than 5 pages
             return null
         props.fetchMovies(currentPage + 1)
         setCurrentPage(currentPage + 1)
+        console.log(currentPage)
     }
 
     // couldn't make it work in bigger screen sizes 
@@ -38,7 +39,7 @@ function CardDeck(props) {
                     key={index}
                     movie={movie}
                     handleClick={props.handleMovieClick}
-                    nominated={props.nominatedDeck || props.nominationCheck(movie)}>
+                    nominated={props.nominatedDeck || props.isMovieNominated(movie)}>
                     </MovieCard>
                 ) : null}
             </ScrollContainer>

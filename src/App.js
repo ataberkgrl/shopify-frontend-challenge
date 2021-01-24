@@ -28,28 +28,29 @@ function App() {
     }
 
     const handleMovieClick = (movie) => {
-        if (!nominationCheck(movie) & nominateds.length < 5)
-        {
-            setNominateds([...nominateds, movie])
-            localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
-        }
-        else
-        {
-            nominateds.forEach((nominated, index) => {
-                if (JSON.stringify(movie) === JSON.stringify(nominated))
-                {
-                    const copyNominateds = [...nominateds]
-                    copyNominateds.splice(index, 1)
-                    setNominateds(copyNominateds)
-                    localStorage.setItem("nominateds", JSON.stringify(copyNominateds))
-                }
-            })
-        }
+        (!isMovieNominated(movie) & nominateds.length < 5) ? addMovieToNominateds(movie) : removeMovieFromNominateds(movie)
     }
 
-    const nominationCheck = (movie) => {
+    const removeMovieFromNominateds = (movie) => {
+        nominateds.forEach((nominated, index) => {
+            if (movie.imdbID === nominated.imdbID)
+            {
+                const copyNominateds = [...nominateds]
+                copyNominateds.splice(index, 1)
+                setNominateds(copyNominateds)
+                localStorage.setItem("nominateds", JSON.stringify(copyNominateds))
+            }
+        })
+    }
+
+    const addMovieToNominateds = (movie) => {
+        setNominateds([...nominateds, movie])
+        localStorage.setItem("nominateds", JSON.stringify([...nominateds, movie]))
+    }
+
+    const isMovieNominated = (movie) => {
         return nominateds.some(nominated => {
-            return JSON.stringify(movie) === JSON.stringify(nominated)
+            return movie.imdbID === nominated.imdbID
         })
     }
 
@@ -61,7 +62,7 @@ function App() {
                                                                                                         search={search}
                                                                                                         fetchMovies={fetchMovies}
                                                                                                         results={results}
-                                                                                                        nominationCheck={nominationCheck}
+                                                                                                        isMovieNominated={isMovieNominated}
                                                                                                         handleMovieClick={handleMovieClick}/>
                                                                                                         : null}
         </div>

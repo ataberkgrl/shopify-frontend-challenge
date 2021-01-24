@@ -12,7 +12,7 @@ function Results(props) {
             fetchMovies={props.fetchMovies}
             nominatedDeck={false}
             handleMovieClick={props.handleMovieClick}
-            nominationCheck={props.nominationCheck}></CardDeck>
+            isMovieNominated={props.isMovieNominated}></CardDeck>
         </div>
     )
 }
