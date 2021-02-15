@@ -1,6 +1,6 @@
 # Shopify Frontend Challenge
 
-This project was build for shopify internship application.
+This project was built for shopify internship application.
 
 You can visit deployed application from [here](https://shopify-frontend-challenge-ataberk.netlify.app/).
 
